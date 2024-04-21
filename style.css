@@ -1,0 +1,121 @@
+
+
+body{
+    margin: 0px ;
+    background-color: aqua ;
+}
+main{
+    margin-left: 20px ;
+    margin-right: 20px ;
+}
+h1{
+    text-align: center ;
+}
+.navbar ul{
+    list-style-type: none ;
+    background-color: hsl(0, 0%, 25%) ;
+    padding: 0px ;
+    margin: 0px ;
+    overflow: hidden ;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+.navbar a:hover{
+    background-color: hsl(0, 0%, 10%);
+}
+.navbar li{
+    float: left;
+}
+
+.image {
+    width: 600px;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  form {
+    text-align: center; /* Center align the content */
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.parallel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.image {
+  width: 600px; /* Adjust image width as needed */
+  margin-right: 20px; /* Adjust margin as needed */
+}
+
+.content h3, .content p {
+  margin: 5px 0; /* Adjust margins as needed */
+}
+
+button {
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.introduction p {
+  font-size: 17px;
+  margin: 3%;
+}
+.color-picker {
+  padding-right: -1000%;
+  margin-top: 0.6%;
+}

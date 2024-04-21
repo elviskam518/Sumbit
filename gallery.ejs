@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Gallery</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/gallery" class="nav-link" >Gallery</a></li>
+            <li><a href="/search" class="nav-link" >Search</a></li>
+            <li><a href="/comment" class="nav-link" >Feedback</a></li>
+            <li><a href="/meet" class="nav-link" >Meet Some new friends</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Gallery</h1>
+    <div class="parallel-container">
+        <img src="/Image/<%= image.imageUrl %>" alt="Uploaded Image" class="image">
+        <div class="content">
+            <h3>Title: <%= image.title %></h3>
+            <h3>Category: <%= image.category %></h3>
+        </div>
+    </div>
+
+   <form>
+    <button onclick="getRandomImage()">Get Another Random Image</button>
+   </form>
+
+    <script src="webserver.js"></script>
+    <script src="clientside.js"></script>
+</body>
+<footer>
+    <div class="container">  
+     <div style="display: flex;">
+        <div style="flex: 1;">
+            <h3>Reference:</h3>
+          <p>https://www.youtube.com/watch?v=wIOpe8S2Mk8&t=137s</p> 
+           <p>https://www.youtube.com/watch?v=lmCq2ZtoKQs</p>
+        </div>
+        <div style="flex: 1;">
+           <p>&copy; 2024 Share_Your_Life. All rights reserved.</p>
+           <div class="color-picker">
+            <input type="color" id="colorPicker">
+            <button onclick="changeBackgroundColor()">Change Background Color</button>
+        </div>
+        </div>
+     </div>
+    </div>
+</footer>
+</html>

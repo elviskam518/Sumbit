@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "6b70c04a-0467-4d20-b45a-971e6c86bfb5",
+		"name": "New Collection",
+		"description": "## Image Gallery API Documentation\n\nWelcome to the Image Gallery API documentation! This API serves as a backend for managing and displaying images in a gallery format. It provides various endpoints to retrieve random images, search for images by title, filter images by category, and upload new images to the gallery.\n\n### Features:\n\n1. **Retrieve Random Image**: Get a random image from the gallery to display on the frontend.\n2. **Search Image by Title**: Search for an image by its title.\n3. **Filter Images by Category**: Filter images by category to meet specific criteria.\n4. **Upload New Images**: Upload new images to the gallery with associated metadata such as category, title, name, and phone number.\n    \n\n### Technologies Used:\n\n- **Express.js**: A fast, unopinionated, minimalist web framework for Node.js used to build the backend server.\n- **Multer**: Middleware for handling multipart/form-data, primarily used for uploading files.\n- **Node.js**: A JavaScript runtime environment used for executing server-side code.\n- **File System (fs)**: Module in Node.js for interacting with the file system, used for reading and writing data.\n- **EJS**: A simple templating language used for rendering HTML templates.\n- **JSON**: Lightweight data interchange format used for storing image metadata.  \n    \n\n#### Error Handling\n\n- **404 Not Found:**\n    \n    - If the requested URL does not match any of the defined routes, a 404 HTML page is rendered.\n        \n\n#### Notes\n\n- Uploaded images are stored in the `Image` directory.( remember to download image folder)\n    \n- Image metadata is stored in `data.json`.\n    \n- The application listens on port 8090 by default.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34355074"
+	},
+	"item": [
+		{
+			"name": "Retrieve a random image from the gallery",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/gallery",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"gallery"
+					]
+				},
+				"description": "#### GET /gallery\n\n- **Description:** Retrieve a random image from the gallery.\n    \n- **Request Parameters:** None\n    \n- **Response:**\n    \n    - Status Code: 200 OK\n        \n    - Body: Rendered HTML page with a random image."
+			},
+			"response": []
+		},
+		{
+			"name": "Uploads a new image to the gallery",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "filename",
+							"description": "The image file to upload.",
+							"type": "file",
+							"src": "postman-cloud:///1eefd00e-ed6b-45a0-aa52-b6127addd6e5"
+						},
+						{
+							"key": "category",
+							"value": "Art & Creativity",
+							"description": "The category of the image.\n",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Beautiful Sunset",
+							"description": "The title of the image.",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "John Doe",
+							"description": "The name of the person who upload the image.",
+							"type": "text"
+						},
+						{
+							"key": "phonenumber",
+							"value": "1234567890",
+							"description": "The phone number of the person who upload the image.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8090",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090"
+				},
+				"description": "#### POST /\n\n- **Description:** Upload a new image to the gallery.\n- **Request Parameters:**\n    - `filename`: The image file to upload.\n    - `title`: Title of the image.\n    - `category`: Category of the image.\n    - `name`: Name of the uploader.\n    - `phonenumber`: Contact number of the uploader.\n- **Response:**\n    - Status Code: 302 Found (redirect to home page after successful upload)"
+			},
+			"response": []
+		},
+		{
+			"name": "Searches for an image by title.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/search?q=Family-+Sample+A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Family-+Sample+A"
+						}
+					]
+				},
+				"description": "#### GET /search?q={searchQuery}\n\n- **Description:** Search for an image by its title.\n- **Request Parameters:**\n    - `q`: The search query (title of the image).\n- **Response:**\n    - Status Code: 200 OK\n    - Body: Rendered HTML page with the found image or a message indicating the image was not found."
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieves a random image from a specific category.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/meet?n=Events+%26+Celebrations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"meet"
+					],
+					"query": [
+						{
+							"key": "n",
+							"value": "Events+%26+Celebrations"
+						}
+					]
+				},
+				"description": "#### GET /meet?n={category}\n\n- **Description:** Retrieve a random image from a specified category.\n    \n- **Request Parameters:**\n    \n    - `n`: The category name.\n        \n- **Response:**\n    \n    - Status Code: 200 OK\n        \n    - Body: Rendered HTML page with a random image from the specified category, or a message indicating no images were found for the category."
+			},
+			"response": []
+		}
+	]
+}

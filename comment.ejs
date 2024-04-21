@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/gallery" class="nav-link" >Gallery</a></li>
+            <li><a href="/search" class="nav-link" >Search</a></li>
+            <li><a href="/comment" class="nav-link" >Feedback</a></li>
+            <li><a href="/meet" class="nav-link" >Meet Some new friends</a></li>
+        </ul>
+    </nav>
+    <h1>Leave some Feedback to this website</h1>
+    <form action="https://formspree.io/f/xayrllna" method="post">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Your Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="comment">Your Comment:</label><br>
+        <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script src="webserver.js"></script>
+    <script src="clientside.js"></script>
+
+</body>
+<footer>
+    <div class="container">  
+     <div style="display: flex;">
+        <div style="flex: 1;">
+            <h3>Reference:</h3>
+          <p>https://www.youtube.com/watch?v=wIOpe8S2Mk8&t=137s</p> 
+           <p>https://www.youtube.com/watch?v=lmCq2ZtoKQs</p>
+        </div>
+        <div style="flex: 1;">
+           <p>&copy; 2024 Share_Your_Life. All rights reserved.</p>
+           <div class="color-picker">
+            <input type="color" id="colorPicker">
+            <button onclick="changeBackgroundColor()">Change Background Color</button>
+        </div>
+        </div>
+     </div>
+    </div>
+</footer>
+</html>

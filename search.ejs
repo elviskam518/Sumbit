@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Gallery</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/gallery" class="nav-link" >Gallery</a></li>
+             <li><a href="/search" class="nav-link" >Search</a></li>
+             <li><a href="/comment" class="nav-link" >Feedback</a></li>
+            <li><a href="/meet" class="nav-link" >Meet Some new friends</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Gallery</h1>
+    <form action="/search" method="GET">
+        <input type="text" name="q" placeholder="Search...">
+        <button type="submit" ><i class="fa fa-search"></i></button>
+    </form>
+    <h1>Search Results</h1>
+    <% if (image) { %>
+        <div class = "parallel-container">
+        <div>
+            <img src="/Image/<%= image.imageUrl %>" class="image" alt="<%= image.title %>">
+        </div><div class="content">
+            <h2>Title: <%= image.title %></h2>
+            <h3>Category: <%= image.category %></h3>
+            <% if(image.comment) { %>
+                <p>Comment: <%= image.comment %></p>
+            <% } %></div>
+        </div>
+    <% } else { %>
+        <% if (notFound) { %>
+            <p>No image found with the specified title.</p>
+        <% } else { %>
+            <p>Error occurred while searching for the image.</p>
+        <% } %>
+    <% } %>
+    <script src="webserver.js"></script>
+    <script src="clientside.js"></script>
+</body>
+<footer>
+    <div class="container">  
+     <div style="display: flex;">
+        <div style="flex: 1;">
+            <h3>Reference:</h3>
+          <p>https://www.youtube.com/watch?v=wIOpe8S2Mk8&t=137s</p> 
+           <p>https://www.youtube.com/watch?v=lmCq2ZtoKQs</p>
+        </div>
+        <div style="flex: 1;">
+           <p>&copy; 2024 Share_Your_Life. All rights reserved.</p>
+           <div class="color-picker">
+            <input type="color" id="colorPicker">
+            <button onclick="changeBackgroundColor()">Change Background Color</button>
+        </div>
+        </div>
+     </div>
+    </div>
+</footer>
+</html>
